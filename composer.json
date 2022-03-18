@@ -1,0 +1,14 @@
+{
+    "name": "yoweli/laravelscaffold",
+    "description": "This package will call an API and generate laravel package classes",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yoweli Kachala",
+            "email": "yoweli@joinflexclub.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
