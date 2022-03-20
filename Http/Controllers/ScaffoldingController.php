@@ -120,6 +120,7 @@ class ScaffoldingController extends Controller
      */
     public function processProject($projectId)
     {
+        dd(file_get_contents('https://yoweli-kachala.com/'));
         foreach(BaseRepository::getModelsForProject($projectId) as $model) {
             dd($model['name']);
         }
