@@ -14,6 +14,7 @@ use Yoweli\LaravelScaffold\Repositories\ProjectRepository;
 use Yoweli\LaravelScaffold\Repositories\ModelRepository;
 use Yoweli\LaravelScaffold\Services\ModelService;
 use Yoweli\LaravelScaffold\Services\ProjectService;
+use Yoweli\LaravelScaffold\Services\ScaffoldingService;
 
 class ProjectController extends Controller
 {
@@ -76,15 +77,4 @@ class ProjectController extends Controller
         ]);
     }
 
-    /**
-     * @param $projectId
-     */
-    public static function processProject($projectId)
-    {
-        dd(file_get_contents('https://yoweli-kachala.com/'));
-        foreach (ModelRepository::getModelsForProject($projectId) as $model) {
-            dd($model['name']);
-        }
-        //make API to process this
-    }
 }

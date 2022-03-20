@@ -14,7 +14,8 @@
                     <i class="fa fa-plus"></i>&nbsp;
                     Add Model
                 </a>
-                <a href="{{ url('process-project/' . $project['id']) }}" title="Generate" class="btn btn-sm btn-success">
+                <a href="{{ url('process-project/' . $project['id']) }}" title="Generate"
+                   class="btn btn-sm btn-success">
                     <i class="fa fa-paper-plane"></i>&nbsp; Process project
                 </a>
             </div>

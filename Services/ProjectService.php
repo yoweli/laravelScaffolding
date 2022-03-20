@@ -25,6 +25,18 @@ class ProjectService
     }
 
     /**
+     * @param $name
+     * @return bool
+     */
+    private static function projectExists($name): bool
+    {
+        if (ProjectRepository::getProjectByName($name) === null) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
      * @param $projectId
      */
     public static function delete($projectId)
@@ -40,19 +52,7 @@ class ProjectService
     public static function update($name, $projectId)
     {
         $pdo = (new dbConnection())->connect();
-        $pdo->exec("UPDATE projects SET name = '" . $name . "' WHERE id = ". $projectId);
-    }
-
-    /**
-     * @param $name
-     * @return bool
-     */
-    private static function projectExists($name): bool
-    {
-        if (ProjectRepository::getProjectByName($name) === null) {
-            return false;
-        }
-        return true;
+        $pdo->exec("UPDATE projects SET name = '" . $name . "' WHERE id = " . $projectId);
     }
 
 }

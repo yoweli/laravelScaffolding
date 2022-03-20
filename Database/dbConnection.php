@@ -11,7 +11,7 @@ class dbConnection
     /**
      * @return SQLite3
      */
-        public function connect(): SQLite3
+    public function connect(): SQLite3
     {
         if ($this->pdo == null) {
             $this->pdo = new SQLite3('data.db');

@@ -13,8 +13,9 @@
             <form method="post" action="{{ url('edit-project/' . $project['id']) }}">
 
                 Project Name <input type="text" value="{{ $project['name'] }}" name="name"/>
-            <button type="submit" class="btn btn-sm btn-success">
-                <i class="fa fa-save"></i>&nbsp;Save</button>
+                <button type="submit" class="btn btn-sm btn-success">
+                    <i class="fa fa-save"></i>&nbsp;Save
+                </button>
             </form>
         </div>
     </div>

@@ -12,8 +12,9 @@
 
             <form method="post" action="{{ url('add-project') }}">
                 Project Name <input type="text" name="name"/>
-            <button type="submit" class="btn btn-sm btn-success">
-                <i class="fa fa-save"></i>&nbsp;Save</button>
+                <button type="submit" class="btn btn-sm btn-success">
+                    <i class="fa fa-save"></i>&nbsp;Save
+                </button>
             </form>
         </div>
     </div>
