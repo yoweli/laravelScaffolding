@@ -4,7 +4,10 @@ namespace Yoweli\LaravelScaffold\Repositories;
 
 use Yoweli\LaravelScaffold\Database\dbConnection;
 
-class BaseRepository
+/**
+ * class ProjectRepository
+ */
+class ProjectRepository
 {
 
     /**
@@ -26,10 +29,10 @@ class BaseRepository
     }
 
     /**
-     * @param $projectId
+     * @param int $projectId
      * @return array|null
      */
-    public static function getProject($projectId): ?array
+    public static function getProject(int $projectId): ?array
     {
         $pdo = (new dbConnection())->connect();
         $stmt = $pdo->query('SELECT * FROM projects where id = ' . $projectId);
@@ -45,10 +48,10 @@ class BaseRepository
     }
 
     /**
-     * @param $name
+     * @param string $name
      * @return array|null
      */
-    public static function getProjectByName($name): ?array
+    public static function getProjectByName(string $name): ?array
     {
         $pdo = (new dbConnection())->connect();
         $stmt = $pdo->query("SELECT * FROM projects where name = '" . $name . "'");
@@ -64,42 +67,4 @@ class BaseRepository
         return $project;
     }
 
-    /**
-     * @param $projectId
-     * @return array
-     */
-    public static function getModelsForProject($projectId): array
-    {
-        $pdo = (new dbConnection())->connect();
-        $stmt = $pdo->query('SELECT * FROM models where project_id = ' . $projectId);
-        $models = [];
-
-        while ($row = $stmt->fetchArray()) {
-            $models[] = [
-                'id' => $row['id'],
-                'name' => $row['name']
-            ];
-        }
-        return $models;
-    }
-
-    /**
-     * @param $name
-     * @return array|null
-     */
-    public static function getModelByName($name): ?array
-    {
-        $pdo = (new dbConnection())->connect();
-        $stmt = $pdo->query("SELECT * FROM models where name = '" . $name . "'");
-
-        $model = null;
-
-        while ($row = $stmt->fetchArray()) {
-            $model = [
-                'id' => $row['id'],
-                'name' => $row['name']
-            ];
-        }
-        return $model;
-    }
 }
